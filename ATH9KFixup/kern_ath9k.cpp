@@ -135,6 +135,27 @@ void ATH9K::processKext(KernelPatcher &patcher, size_t index, mach_vm_address_t 
                         progressState |= ProcessingState::AirPortAtheros40Patched;
                         DBGLOG("ath9k", "patched ___ath_attach");
                     }
+                    else if (getKernelVersion() == KernelVersion::HighSierra){
+                        const uint8_t find1[]    = {0x66, 0x89, 0x83, 0x38, 0x04, 0x00, 0x00};
+                        const uint8_t replace1[] = {0xC6, 0x83, 0x38, 0x04, 0x00, 0x00, 0x30};
+                        KextPatch kext_patch1 {
+                            {&kextList[i], find1, replace1, sizeof(find1), 1},
+                            KernelVersion::HighSierra, KernelVersion::HighSierra
+                        };
+                        applyPatches(patcher, index, &kext_patch1, 1);
+                        progressState |= ProcessingState::AirPortAtheros40Patched;
+                        DBGLOG("ath9k", "patched 10.13.x start");
+
+                        const uint8_t find2[]    = {0x41, 0x0F, 0xB7, 0xFD, 0x83, 0xFF, 0x30};
+                        const uint8_t replace2[] = {0x41, 0x0F, 0xB7, 0xFD, 0x83, 0xFF, 0x00};
+                        KextPatch kext_patch2 {
+                            {&kextList[i], find2, replace2, sizeof(find2), 1},
+                            KernelVersion::HighSierra, KernelVersion::HighSierra
+                        };
+                        applyPatches(patcher, index, &kext_patch2, 1);
+                        progressState |= ProcessingState::AirPortAtheros40Patched;
+                        DBGLOG("ath9k", "patched ___ath_attach");
+                    }
 
                     const uint8_t find3[]    = {0xC1, 0xE9, 0x0C, 0x81, 0xE1, 0xC0, 0xFF, 0x0F, 0x00};
                     const uint8_t replace3[] = {0xC1, 0xE9, 0x0C, 0x90, 0xB9, 0xC0, 0x01, 0x00, 0x00};
