@@ -53,6 +53,7 @@ distribute:
 	#cp -R $(BUILDDIR)/Debug ./Distribute
 	cp -R $(BUILDDIR)/Release ./Distribute
 	cp -R ATH9KInjector.kext ./Distribute/Release
+	cp LICENSE.txt ./Distribute
 	find ./Distribute -path *.DS_Store -delete
 	find ./Distribute -path *.dSYM -exec echo rm -r {} \; >/tmp/org.voodoo.rm.dsym.sh
 	chmod +x /tmp/org.voodoo.rm.dsym.sh
