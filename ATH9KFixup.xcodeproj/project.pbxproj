@@ -14,6 +14,8 @@
 		A7005EDA1F4362E0009B5FE0 /* kern_ath946x.h in Headers */ = {isa = PBXBuildFile; fileRef = A7005ED91F4362E0009B5FE0 /* kern_ath946x.h */; };
 		A7005EDC1F4362F0009B5FE0 /* kern_ath9485.h in Headers */ = {isa = PBXBuildFile; fileRef = A7005EDB1F4362F0009B5FE0 /* kern_ath9485.h */; };
 		A7005EDE1F4362FC009B5FE0 /* kern_ath9565.h in Headers */ = {isa = PBXBuildFile; fileRef = A7005EDD1F4362FC009B5FE0 /* kern_ath9565.h */; };
+		C61695F1240B1C680027748E /* AirPortAtheros40.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = C61695ED240B1C120027748E /* AirPortAtheros40.kext */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C61695F2240B1C680027748E /* ATH9KInjector.kext in CopyFiles */ = {isa = PBXBuildFile; fileRef = C61695EE240B1C120027748E /* ATH9KInjector.kext */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE405EC91E49DD9700AA0B3D /* libkmod.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE405EC71E49DD7100AA0B3D /* libkmod.a */; };
 		CE405ED91E4A080700AA0B3D /* plugin_start.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE405ED81E4A080700AA0B3D /* plugin_start.cpp */; };
 /* End PBXBuildFile section */
@@ -25,6 +27,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				C61695F1240B1C680027748E /* AirPortAtheros40.kext in CopyFiles */,
+				C61695F2240B1C680027748E /* ATH9KInjector.kext in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +47,8 @@
 		A7005ED91F4362E0009B5FE0 /* kern_ath946x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kern_ath946x.h; sourceTree = "<group>"; };
 		A7005EDB1F4362F0009B5FE0 /* kern_ath9485.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kern_ath9485.h; sourceTree = "<group>"; };
 		A7005EDD1F4362FC009B5FE0 /* kern_ath9565.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kern_ath9565.h; sourceTree = "<group>"; };
+		C61695ED240B1C120027748E /* AirPortAtheros40.kext */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.kernel-extension"; path = AirPortAtheros40.kext; sourceTree = "<group>"; };
+		C61695EE240B1C120027748E /* ATH9KInjector.kext */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.kernel-extension"; path = ATH9KInjector.kext; sourceTree = "<group>"; };
 		CE405EBA1E49DD7100AA0B3D /* kern_compression.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = kern_compression.hpp; sourceTree = "<group>"; };
 		CE405EBB1E49DD7100AA0B3D /* kern_disasm.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = kern_disasm.hpp; sourceTree = "<group>"; };
 		CE405EBC1E49DD7100AA0B3D /* kern_file.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = kern_file.hpp; sourceTree = "<group>"; };
@@ -75,6 +81,7 @@
 		1C748C1D1C21952C0024EED2 = {
 			isa = PBXGroup;
 			children = (
+				C61695EC240B1BD90027748E /* Plugins */,
 				1CF01C911C8CF982002DCEA3 /* Docs */,
 				1C748C291C21952C0024EED2 /* ATH9KFixup */,
 				CE405EC81E49DD7B00AA0B3D /* SDK */,
@@ -113,6 +120,15 @@
 				1CF01C921C8CF997002DCEA3 /* Changelog.md */,
 			);
 			name = Docs;
+			sourceTree = "<group>";
+		};
+		C61695EC240B1BD90027748E /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				C61695ED240B1C120027748E /* AirPortAtheros40.kext */,
+				C61695EE240B1C120027748E /* ATH9KInjector.kext */,
+			);
+			name = Plugins;
 			sourceTree = "<group>";
 		};
 		CE405EB91E49DD7100AA0B3D /* Headers */ = {

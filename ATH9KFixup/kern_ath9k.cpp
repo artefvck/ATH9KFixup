@@ -17,7 +17,7 @@
 #include "kern_ath9565.h"
 
 static const char *kextAirPortAtheros40[] {
-    "/System/Library/Extensions/IO80211Family.kext/Contents/PlugIns/AirPortAtheros40.kext/Contents/MacOS/AirPortAtheros40"
+    "/Library/Extensions/ATH9KFixup.kext/Contents/PlugIns/AirPortAtheros40.kext/Contents/MacOS/AirPortAtheros40"
 };
 
 static KernelPatcher::KextInfo kextList[] {
