@@ -22,7 +22,28 @@
 	<string>$(MODULE_VERSION)</string>
 	<key>IOKitPersonalities</key>
 	<dict>
-		<key>ATH9KFixup</key>
+        <key>AirPort_AtherosNewma40</key>
+        <dict>
+            <key>CFBundleIdentifier</key>
+            <string>com.apple.driver.AirPort.Atheros40</string>
+            <key>IOClass</key>
+            <string>AirPort_AtherosNewma40</string>
+            <key>IOMatchCategory</key>
+            <string>IODefaultMatchCategory</string>
+            <key>IONameMatch</key>
+            <array>
+                <string>pci168c,32</string>
+                <string>pci168c,33</string>
+                <string>pci168c,34</string>
+                <string>pci168c,36</string>
+                <string>pci168c,37</string>
+            </array>
+            <key>IOProbeScore</key>
+            <integer>700</integer>
+            <key>IOProviderClass</key>
+            <string>IOPCIDevice</string>
+        </dict>
+		<key>com.chunnann.ATH9KFixup</key>
 		<dict>
 			<key>CFBundleIdentifier</key>
 			<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
@@ -42,22 +63,26 @@
 	<string>1.0</string>
 	<key>OSBundleLibraries</key>
 	<dict>
-		<key>as.vit9696.Lilu</key>
-		<string>1.2.6</string>
-		<key>com.apple.kpi.bsd</key>
-		<string>12.0.0</string>
-		<key>com.apple.kpi.dsep</key>
-		<string>12.0.0</string>
-		<key>com.apple.kpi.iokit</key>
-		<string>12.0.0</string>
-		<key>com.apple.kpi.libkern</key>
-		<string>12.0.0</string>
-		<key>com.apple.kpi.mach</key>
-		<string>12.0.0</string>
-		<key>com.apple.kpi.unsupported</key>
-		<string>12.0.0</string>
+        <key>as.vit9696.Lilu</key>
+        <string>1.2.6</string>
+        <key>com.apple.iokit.IONetworkingFamily</key>
+        <string>1.5</string>
+        <key>com.apple.iokit.IOPCIFamily</key>
+        <string>2.7</string>
+        <key>com.apple.kpi.bsd</key>
+        <string>12.0.0</string>
+        <key>com.apple.kpi.dsep</key>
+        <string>12.0.0</string>
+        <key>com.apple.kpi.iokit</key>
+        <string>12.0.0</string>
+        <key>com.apple.kpi.libkern</key>
+        <string>12.0.0</string>
+        <key>com.apple.kpi.mach</key>
+        <string>12.0.0</string>
+        <key>com.apple.kpi.unsupported</key>
+        <string>12.0.0</string>
 	</dict>
 	<key>OSBundleRequired</key>
-	<string>Root</string>
+    <string>Network-Root</string>
 </dict>
 </plist>

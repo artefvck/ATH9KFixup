@@ -44,6 +44,40 @@ bool ATH9K::init() {
 void ATH9K::deinit() {
 }
 
+//==============================================================================
+//
+// Find service by name in a specified registry plane (gIO80211FamilyPlane or gIOServicePlane)
+//
+
+IOService* LIBKERN_RETURNS_NOT_RETAINED findService(const IORegistryPlane* plane, const char *service_name)
+{
+    IOService            * service = nullptr;
+    IORegistryIterator   * iterator = IORegistryIterator::iterateOver(plane, kIORegistryIterateRecursively);
+
+    if (iterator)
+    {
+        size_t len = strlen(service_name);
+
+        IORegistryEntry *res {nullptr};
+        while ((res = OSDynamicCast(IORegistryEntry, iterator->getNextObject())) != nullptr)
+        {
+            const char *resname = res->getName();
+            if (resname && !strncmp(service_name, resname, len))
+            {
+                service = OSDynamicCast(IOService, res);
+                if (service != nullptr)
+                    break;
+            }
+        }
+
+        iterator->release();
+    }
+
+    return service;
+}
+
+//==============================================================================
+
 void ATH9K::processKext(KernelPatcher &patcher, size_t index, mach_vm_address_t address, size_t size) {
     if (progressState != ProcessingState::EverythingDone) {
         for (size_t i = 0; i < kextListSize; i++) {
